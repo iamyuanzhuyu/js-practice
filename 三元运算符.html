@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-<script>
+  </head>
+  <body>
+    <script>
+      //用户输入2个数，在控制台输出最大的值
 
-//用户输入2个数，在控制台输出最大的值
+      //
+      //三元运算练习。数字补0操作。如果用户输入的数字小于9，就在前面补0，否者不处理
+      // 主要是补0的操作有两种。
+      //  如果是+prompt，那么三元运算需要变成`0` + num ;
+      // 如果是prompt，prompt本身就是一个字符串类型，那么0+一个字符串就是拼接字符串
 
-// 
-//三元运算练习。数字补0操作。如果用户输入的数字小于9，就在前面补0，否者不处理
-// 主要是补0的操作有两种。
-//  如果是+prompt，那么三元运算需要变成`0` + num ; 
-// 如果是prompt，prompt本身就是一个字符串类型，那么0+一个字符串就是拼接字符串
+      let num = prompt('请输入一个数字');
 
-let num = prompt("请输入一个数字")
+      res = num < 10 ? 0 + num : num;
 
-res = num <10 ? 0 + num : num
-
-alert(res)
-
-
-</script>
-
-
-</body>
+      alert(res);
+    </script>
+  </body>
 </html>

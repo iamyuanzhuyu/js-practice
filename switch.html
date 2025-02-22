@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    //2025年02月22日
+
+    // 用户输入2个数，可以进行加减乘除的运算，并且返回结果
+
+    //第一次运行失败的问题就是alert里面应该是用反引号，我写成了单引号导致无法解析
+
+    let num1 = +prompt('请输入第一个数字')
+    let num2 = +prompt('请输入第一个数字')
+    let op = prompt('请输入+ - * / 的运算规则')
+
+    switch (op) {
+      case '+':
+        alert(`您的两数相加的运算结果是：${num1 + num2}`)
+        break
+      case '-':
+        alert(`您的两数相减的运算结果是：${num1 - num2}`)
+        break
+      case '*':
+        alert(`您的两数相乘的运算结果是：${num1 * num2}`)
+        break
+      case '/':
+        alert(`您的两数相除的运算结果是：${num1 / num2}`)
+        break
+
+      default:
+        alert('您输入的运算规则不合法')
+        break
+    }
+  </script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+//90 以上是优秀；70-90是良好；60-70是及格 ；60一下是不及格
+
+
+    while (true) {
+        let input = prompt("请输入你的成绩");
+        // 处理用户点击取消的情况
+        if (input === null) {
+            alert("输入无效，请重新输入");
+            continue;
+        }
+        input = input.trim(); // 去除首尾空格
+        if (input === "") {
+            alert("您没有输入内容，请重新输入");
+            continue;
+        }
+        let score = +input; // 转换为数字
+        // 检查是否为有效数字
+        if (isNaN(score)) {
+            alert("输入的不是有效数字，请重新输入");
+            continue;
+        }
+        // 可选：检查成绩范围是否合理（0~100）
+        if (score < 0 || score > 100) {
+            alert("成绩需在0到100之间，请重新输入");
+            continue;
+        }
+        // 成绩等级判断
+        if (score < 60) {
+            alert("不及格");
+        } else if (score <= 70) {
+            alert("及格");
+        } else if (score <= 90) {
+            alert("良好");
+        } else {
+            alert("优秀");
+        }
+        break; // 输入有效，退出循环
+    }
+
+</script>
+
+
+</body>
+</html>

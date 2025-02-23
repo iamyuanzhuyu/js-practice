@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    /*
+    简易atm 取款机
+
+    用户输入4个数字
+    1-存钱
+    2-取钱
+    3-查看余额
+    4-退出
+
+
+    分析
+
+    1-在用户没有输入操作之前，需要一直循环提示，使用while循环包裹剩余的操作逻辑
+    2-4种操作采用采用if语句
+    3-定义一个salary为用户的基础本金，并且更新balance为余额
+    4-定义一个number为存钱或者取钱的数字
+    5-定义一个balence余额
+    存钱就是salary+balence
+    取钱就是salary-balence
+
+    存钱=saveMoney
+    取钱=cash
+    查看余额= catBalence
+    退出 = quit
+
+    */
+    let basicMoney = 100
+    let balance = basicMoney // 初始化余额
+    let saveMoney // 存钱
+    let cash // 取钱
+
+    while (true) {
+      let op = +prompt(`
+      请进行操作：
+      1-存钱
+      2-取钱
+      3-查看余额
+      4-退出
+      `)
+
+      if (op === 4) {
+        break
+      }
+
+      switch (op) {
+        case 1:
+          saveMoney = +prompt('你要存多少钱')
+          balance += saveMoney // 累加到当前余额
+          alert(`您成功存入了：${saveMoney} 元，目前的余额是${balance}`)
+          break
+
+        case 2:
+          cash = +prompt('你要取多少钱')
+          if (cash <= balance) {
+            // 允许取完余额
+            balance = balance - cash
+            alert(`您成功取了：${cash} 元，目前的余额是${balance}`)
+          } else {
+            alert(`余额不足，您目前余额只有${balance}元`)
+          }
+          break
+
+        case 3:
+          alert(`您的余额是：${balance} 元`)
+          break
+        default:
+          alert('无效操作，请重新选择！<br>')
+          break
+      }
+    }
+  </script>
+</html>
